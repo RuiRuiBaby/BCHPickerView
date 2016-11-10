@@ -24,7 +24,7 @@ pod 'BCHPickerView'
 ```
 效果:
 
-![image](https://github.com/Baichenghui/BCHAlertView/blob/master/images/a.png)
+![image](https://github.com/Baichenghui/BCHPickerView/blob/master/images/a.png)
 
 
 2.```自定义效果(传一个字典即可) ```
@@ -57,6 +57,6 @@ pod 'BCHPickerView'
 ```
 效果:
 
-![image](https://github.com/Baichenghui/BCHAlertView/blob/master/images/b.png)
+![image](https://github.com/Baichenghui/BCHPickerView/blob/master/images/b.png)
 
  
