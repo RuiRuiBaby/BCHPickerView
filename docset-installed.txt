@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/yiliao/Library/Developer/Shared/Documentation/DocSets/com.coderbai.bchpickerviewdemo.BCHPickerViewDemo.docset
+Time: 2016-11-10 08:28:32 +0000

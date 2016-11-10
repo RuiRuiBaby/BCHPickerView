@@ -26,6 +26,14 @@ NSString * const BCHButtonTextColor = @"buttonTextColor";
 NSString * const BCHSelectedObject = @"selectedObject";
 NSString * const BCHMaskViewBackgroundColor = @"maskViewBackgroundColor";
 
+
+/**
+ 确定后的回调block
+
+ @param view          self
+ @param selectedIndex 选项索引
+ @param selectedValue 选择的值
+ */
 typedef void(^BCHPickerViewClickConfirmCompletionBlock)(BCHPickerView *view,NSInteger selectedIndex,NSString *selectedValue);
 
 @interface BCHPickerView()<UIPickerViewDelegate,UIPickerViewDataSource>
@@ -46,6 +54,12 @@ typedef void(^BCHPickerViewClickConfirmCompletionBlock)(BCHPickerView *view,NSIn
 @implementation BCHPickerView
 
 static BCHPickerView* sharedView;
+
+/**
+ 单例
+
+ @return 单例创建自己
+ */
 + (BCHPickerView*)sharedView {
     if (!sharedView) {
         static dispatch_once_t onceToken;
@@ -56,6 +70,15 @@ static BCHPickerView* sharedView;
     return sharedView;
 }
 
+
+/**
+ 实现单列(lie)的pickerView选择
+ 
+ @param view       显示在那个view上
+ @param items      选择的数据数组
+ @param options    定义字典控制样式
+ @param completion 选择数据回调的block
+ */
 +(void)bch_PickerViewInView:(UIView *)view
                       items:(NSArray *)items
                     options:(NSDictionary *)options
@@ -65,7 +88,16 @@ static BCHPickerView* sharedView;
                                             items:items
                                           options:options];
     [view addSubview:[self sharedView]];
-} 
+}
+
+
+/**
+ 初始化UI
+
+ @param view       显示在那个view上
+ @param items      选择的数据数组
+ @param options    定义字典控制样式
+ */
 -(void)initializePickerViewInView:(UIView *)view
                             items:(NSArray *)items
                           options:(NSDictionary *)options{
@@ -164,12 +196,27 @@ static BCHPickerView* sharedView;
     //show
     [self bch_show];
 }
+
+
+/**
+ 点击工具条的响应方法
+ */
 -(void)bch_toolBarClick{}
+
+
+/**
+ 显示pickerView
+ */
 -(void)bch_show{
     [UIView animateWithDuration:0.25 animations:^{
         self.contentView.transform = CGAffineTransformMakeTranslation(0,-260);
     }];
 }
+
+
+/**
+ 移除pickerView
+ */
 -(void)bch_remove{
     [UIView animateWithDuration:0.25 animations:^{
         self.contentView.transform = CGAffineTransformMakeTranslation(0,260);
@@ -179,16 +226,27 @@ static BCHPickerView* sharedView;
         [self  removeFromSuperview];
     }];
 }
+
 #pragma mark - Events
+
+/**
+ 点击取消按钮响应方法
+ */
 -(void)cancleClick{
     [self bch_remove];
 }
+
+
+/**
+ 点击确定按钮的响应方法
+ */
 -(void)confirmClick{
     [self bch_remove];
     if (_completionBlock) {
         _completionBlock(self,[_items indexOfObject:self.selectValue],self.selectValue);
     }
 }
+
 #pragma mark - UIPickerViewDelegate,UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -216,13 +274,40 @@ static BCHPickerView* sharedView;
     self.selectValue = [_items objectAtIndex:row];
     self.completionBlock(self,row,self.selectValue);
 }
+
 #pragma mark - utils
+
+/**
+ 给view的顶部画边线
+
+ @param view   需要画线的视图
+ @param height 线高
+ @param color  线的颜色
+ */
 -(void)addTopBorderForView:(UIView *)view Height: (CGFloat)height color:(UIColor*)color{
     [self addBorderForView:view frame:CGRectMake(0, 0, view.frame.size.width, height) color:color];
 }
+
+
+/**
+ 给view的底部画边线
+
+ @param view   需要画线的视图
+ @param height 线高
+ @param color  线的颜色
+ */
 -(void)addBottomBorderForView:(UIView *)view Height: (CGFloat)height color:(UIColor*)color{
     [self addBorderForView:view frame:CGRectMake(0, view.frame.size.height - height, view.frame.size.width, height) color:color];
 }
+
+
+/**
+ 给view添加boder
+
+ @param view  添加border的view
+ @param frame border 的frame
+ @param color border 的颜色
+ */
 -(void)addBorderForView:(UIView *)view frame:(CGRect)frame color:(UIColor*)color{
     CALayer *border = [CALayer layer];
     border.frame = frame;
@@ -236,9 +321,23 @@ static BCHPickerView* sharedView;
 @property (strong, nonatomic) UILabel *txtLable;
 @end
 @implementation BCHPickItemView
+
+
+/**
+ pickItemView
+
+ @return BCHPickItemView
+ */
 +(instancetype)pickItemView{
     return [[self alloc]init];
 }
+
+
+/**
+ 初始化
+
+ @return pickItemView
+ */
 - (instancetype)init{
     self = [super init];
     if (self) {
@@ -251,6 +350,17 @@ static BCHPickerView* sharedView;
     }
     return self;
 }
+
+
+/**
+ 给item属性设置值
+ 
+ @param title           显示内容
+ @param titleColor      内容颜色
+ @param titleFont       内容字体
+ @param backgroundColor 背景色
+ @param height          高度
+ */
 -(void)configTitle:(NSString *)title
         titleColor:(UIColor *)titleColor
          titleFont:(UIFont *)titleFont

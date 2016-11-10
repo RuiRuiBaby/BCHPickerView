@@ -29,7 +29,17 @@ extern NSString * const BCHSelectedObject;
 extern NSString * const BCHMaskViewBackgroundColor;
 
 #pragma mark - BCHPickerView
+
 @interface BCHPickerView : UIView
+
+/**
+ 实现单列(lie)的pickerView选择
+
+ @param view       显示在那个view上
+ @param items      选择的数据数组
+ @param options    定义字典控制样式
+ @param completion 选择数据回调的block
+ */
 +(void)bch_PickerViewInView:(UIView *)view 
                               items:(NSArray *)items
                             options:(NSDictionary *)options
@@ -38,7 +48,25 @@ extern NSString * const BCHMaskViewBackgroundColor;
 
 #pragma mark - BCHPickItemView
 @interface BCHPickItemView : UIView
+
+
+/**
+ pickerView的item
+
+ @return view
+ */
 +(instancetype)pickItemView;
+
+
+/**
+ 给item属性设置值
+
+ @param title           显示内容
+ @param titleColor      内容颜色
+ @param titleFont       内容字体
+ @param backgroundColor 背景色
+ @param height          高度
+ */
 -(void)configTitle:(NSString *)title
         titleColor:(UIColor *)titleColor
          titleFont:(UIFont *)titleFont
