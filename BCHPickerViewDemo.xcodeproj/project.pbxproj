@@ -15,7 +15,7 @@
 		2DBB19331DD3000400784059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBB19311DD3000400784059 /* LaunchScreen.storyboard */; };
 		2DBB193E1DD3000400784059 /* BCHPickerViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBB193D1DD3000400784059 /* BCHPickerViewDemoTests.m */; };
 		2DBB19491DD3000400784059 /* BCHPickerViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBB19481DD3000400784059 /* BCHPickerViewDemoUITests.m */; };
-		2DBB195F1DD3020F00784059 /* BCHPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBB195E1DD3020F00784059 /* BCHPickerView.m */; };
+		2DE3FBB91DD41CB40032181B /* BCHPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3FBB81DD41CB40032181B /* BCHPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		2DBB19441DD3000400784059 /* BCHPickerViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCHPickerViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBB19481DD3000400784059 /* BCHPickerViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCHPickerViewDemoUITests.m; sourceTree = "<group>"; };
 		2DBB194A1DD3000400784059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DBB195D1DD3020F00784059 /* BCHPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCHPickerView.h; sourceTree = "<group>"; };
-		2DBB195E1DD3020F00784059 /* BCHPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCHPickerView.m; sourceTree = "<group>"; };
+		2DE3FBB71DD41CB40032181B /* BCHPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCHPickerView.h; sourceTree = "<group>"; };
+		2DE3FBB81DD41CB40032181B /* BCHPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCHPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		2DBB19221DD3000400784059 /* BCHPickerViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2DBB19591DD3005E00784059 /* BCHPickerView */,
+				2DE3FBB61DD41CB40032181B /* BCHPickerView */,
 				2DBB19261DD3000400784059 /* AppDelegate.h */,
 				2DBB19271DD3000400784059 /* AppDelegate.m */,
 				2DBB19291DD3000400784059 /* ViewController.h */,
@@ -144,11 +144,11 @@
 			path = BCHPickerViewDemoUITests;
 			sourceTree = "<group>";
 		};
-		2DBB19591DD3005E00784059 /* BCHPickerView */ = {
+		2DE3FBB61DD41CB40032181B /* BCHPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				2DBB195D1DD3020F00784059 /* BCHPickerView.h */,
-				2DBB195E1DD3020F00784059 /* BCHPickerView.m */,
+				2DE3FBB71DD41CB40032181B /* BCHPickerView.h */,
+				2DE3FBB81DD41CB40032181B /* BCHPickerView.m */,
 			);
 			path = BCHPickerView;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DBB195F1DD3020F00784059 /* BCHPickerView.m in Sources */,
+				2DE3FBB91DD41CB40032181B /* BCHPickerView.m in Sources */,
 				2DBB192B1DD3000400784059 /* ViewController.m in Sources */,
 				2DBB19281DD3000400784059 /* AppDelegate.m in Sources */,
 				2DBB19251DD3000400784059 /* main.m in Sources */,
