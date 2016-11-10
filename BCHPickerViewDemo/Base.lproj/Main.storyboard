@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKS-0e-lwk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xih-w5-ww3"/>
+                                    <constraint firstAttribute="width" constant="100" id="p1P-mf-Rrr"/>
+                                </constraints>
+                                <state key="normal" title="show custom"/>
+                                <connections>
+                                    <action selector="showCustomAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BAu-kH-Sv4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMq-qG-W9W">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="7vc-LR-Dz6"/>
+                                    <constraint firstAttribute="height" constant="30" id="8Ry-vZ-crf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dhK-cb-49O"/>
+                                    <constraint firstAttribute="width" constant="100" id="vJe-Mv-OcK"/>
+                                </constraints>
+                                <state key="normal" title="show default"/>
+                                <connections>
+                                    <action selector="showDefualtAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vau-6X-ZFB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mMq-qG-W9W" secondAttribute="trailing" constant="50" id="3cK-Na-a34"/>
+                            <constraint firstItem="mMq-qG-W9W" firstAttribute="top" secondItem="uKS-0e-lwk" secondAttribute="top" id="9vd-hH-Ref"/>
+                            <constraint firstItem="uKS-0e-lwk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="ZfP-JQ-wEY"/>
+                            <constraint firstItem="uKS-0e-lwk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="afa-9p-3u5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
