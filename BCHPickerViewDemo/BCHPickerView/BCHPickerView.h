@@ -13,6 +13,7 @@
 #import <UIKit/UIKit.h>
 @class BCHPickerView; 
 
+extern NSString * const BCHContentHeight;
 extern NSString * const BCHItemHeight;
 extern NSString * const BCHToolBarHeight;
 extern NSString * const BCHTextColor;

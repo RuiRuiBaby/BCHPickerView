@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		2DE3FBBE1DD4680D0032181B /* BCHPickerView */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 2DE3FBBF1DD4680D0032181B /* Build configuration list for PBXAggregateTarget "BCHPickerView" */;
-			buildPhases = (
-				2DE3FBC21DD468320032181B /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = BCHPickerView;
-			productName = BCHPickerView;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		2DBB19251DD3000400784059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBB19241DD3000400784059 /* main.m */; };
 		2DBB19281DD3000400784059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBB19271DD3000400784059 /* AppDelegate.m */; };
@@ -246,10 +232,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2DBB191F1DD3000400784059;
 					};
-					2DE3FBBE1DD4680D0032181B = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 2DBB191B1DD3000400784059 /* Build configuration list for PBXProject "BCHPickerViewDemo" */;
@@ -268,7 +250,6 @@
 				2DBB191F1DD3000400784059 /* BCHPickerViewDemo */,
 				2DBB19381DD3000400784059 /* BCHPickerViewDemoTests */,
 				2DBB19431DD3000400784059 /* BCHPickerViewDemoUITests */,
-				2DE3FBBE1DD4680D0032181B /* BCHPickerView */,
 			);
 		};
 /* End PBXProject section */
@@ -299,22 +280,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2DE3FBC21DD468320032181B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"coderbai\";\ncompanyID=\"com.coderbai\";\ncompanyURL=\"https://github.com/Baichenghui\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DBB191C1DD3000400784059 /* Sources */ = {
@@ -537,20 +502,6 @@
 			};
 			name = Release;
 		};
-		2DE3FBC01DD4680D0032181B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		2DE3FBC11DD4680D0032181B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,14 +540,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		2DE3FBBF1DD4680D0032181B /* Build configuration list for PBXAggregateTarget "BCHPickerView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2DE3FBC01DD4680D0032181B /* Debug */,
-				2DE3FBC11DD4680D0032181B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

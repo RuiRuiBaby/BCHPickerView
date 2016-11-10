@@ -11,20 +11,22 @@
 //
 
 #import "BCHPickerView.h"
-NSString * const BCHItemHeight = @"itemHeight";
-NSString * const BCHToolBarHeight = @"toolBarHeight";
-NSString * const BCHTextColor = @"textColor";
-NSString * const BCHTextFont = @"font";
-NSString * const BCHBackgroundColor = @"backgroundColor";
-NSString * const BCHItemBackgroundColor = @"itemBackgroundColor";
-NSString * const BCHToolBarBackgroundColor = @"toolBarBackgroundColor";
-NSString * const BCHToolBarTopBorderColor = @"toolBarTopBorderColor";
-NSString * const BCHToolBarBottomBorderColor = @"toolBarBottomBorderColor";
-NSString * const BCHButtonColor = @"buttonColor";
-NSString * const BCHButtonFont = @"buttonFont"; 
-NSString * const BCHButtonTextColor = @"buttonTextColor";
-NSString * const BCHSelectedObject = @"selectedObject";
-NSString * const BCHMaskViewBackgroundColor = @"maskViewBackgroundColor";
+
+NSString * const BCHContentHeight = @"contentHeight";// default is 260
+NSString * const BCHItemHeight = @"itemHeight";// default is 44
+NSString * const BCHToolBarHeight = @"toolBarHeight";// default is 44
+NSString * const BCHTextColor = @"textColor";// default is blackColor
+NSString * const BCHTextFont = @"font";// default is 16
+NSString * const BCHBackgroundColor = @"backgroundColor";// default is whiteColor
+NSString * const BCHItemBackgroundColor = @"itemBackgroundColor";// default is whiteColor
+NSString * const BCHToolBarBackgroundColor = @"toolBarBackgroundColor";// default is whiteColor
+NSString * const BCHToolBarTopBorderColor = @"toolBarTopBorderColor";// default is groupTableViewBackgroundColor
+NSString * const BCHToolBarBottomBorderColor = @"toolBarBottomBorderColor";// default is groupTableViewBackgroundColor
+NSString * const BCHButtonColor = @"buttonColor";// default is defaultColor
+NSString * const BCHButtonFont = @"buttonFont"; // default is 16
+NSString * const BCHButtonTextColor = @"buttonTextColor";// default is blackColor
+NSString * const BCHSelectedObject = @"selectedObject";// default is items[0]
+NSString * const BCHMaskViewBackgroundColor = @"maskViewBackgroundColor";// default is [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]
 
 
 /**
@@ -121,7 +123,8 @@ static BCHPickerView* sharedView;
         _maskView.backgroundColor = maskViewBackgroundColor;
     }
     //_pickerContainerView
-    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0.0, _maskView.bounds.size.height, view.bounds.size.width, 260.0)];
+    CGFloat contentHeight = (_options[BCHContentHeight] != nil) ? [_options[BCHContentHeight] floatValue] : 260;
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0.0, _maskView.bounds.size.height, view.bounds.size.width, contentHeight)];
     _contentView.userInteractionEnabled = YES;
     [_maskView addSubview:_contentView];
     
@@ -181,7 +184,7 @@ static BCHPickerView* sharedView;
         [self addBottomBorderForView:_toolBarView Height:0.5 color:[UIColor groupTableViewBackgroundColor]];
     }
     //_pickerView
-    _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, toolBarHeight, view.bounds.size.width, 260 - toolBarHeight)];
+    _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, toolBarHeight, view.bounds.size.width, contentHeight - toolBarHeight)];
     _pickerView.dataSource = self;
     _pickerView.delegate = self;
     [_contentView addSubview:_pickerView];
@@ -208,8 +211,9 @@ static BCHPickerView* sharedView;
  显示pickerView
  */
 -(void)bch_show{
+    CGFloat contentHeight = (_options[BCHContentHeight] != nil) ? [_options[BCHContentHeight] floatValue] : 260;
     [UIView animateWithDuration:0.25 animations:^{
-        self.contentView.transform = CGAffineTransformMakeTranslation(0,-260);
+        self.contentView.transform = CGAffineTransformMakeTranslation(0,-contentHeight);
     }];
 }
 
@@ -218,8 +222,9 @@ static BCHPickerView* sharedView;
  移除pickerView
  */
 -(void)bch_remove{
+    CGFloat contentHeight = (_options[BCHContentHeight] != nil) ? [_options[BCHContentHeight] floatValue] : 260;
     [UIView animateWithDuration:0.25 animations:^{
-        self.contentView.transform = CGAffineTransformMakeTranslation(0,260);
+        self.contentView.transform = CGAffineTransformMakeTranslation(0,contentHeight);
     } completion:^(BOOL finished) {
         [self.maskView removeFromSuperview];
         [self.contentView removeFromSuperview];

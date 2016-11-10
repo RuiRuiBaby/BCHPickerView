@@ -46,6 +46,7 @@
                                 options:@{
                                           BCHItemHeight:@"35",
                                           BCHToolBarHeight:@"35",
+                                          BCHContentHeight:@"300",
                                           BCHButtonFont:[UIFont systemFontOfSize:15],
                                           BCHButtonTextColor:[UIColor colorWithRed:51/255.0 green:219 /255.0 blue:172/255.0 alpha:1.0],
                                           BCHBackgroundColor: [UIColor blueColor],
